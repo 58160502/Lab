@@ -24,8 +24,8 @@ th {
 }
 
 h1 {
+    color: #993300;
     text-align: center;
-    text-size: 8px;
-    background-image: url('1.png'); 
+    font-size: 8px;
 }
 
