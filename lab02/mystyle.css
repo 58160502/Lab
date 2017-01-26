@@ -3,7 +3,12 @@ body  {
     background-attachment: fixed;        
     }
 
-table,tr,td {
+table,td {
         background-color: #FFFFFF;
         text-align: center;
+        padding: 15px;
+        border: 1px;
+        border-color: #99CCFF;
+
+        
 }
