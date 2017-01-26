@@ -2,13 +2,14 @@ body  {
     background-image : url('bg.jpg') ;   
     background-attachment: fixed;        
     }
+table {
+    text-align: center;
+    }
 
-table,td {
-        background-color: #FFFFFF;
-        text-align: center;
-        padding: 15px;
-        border: 1px;
-        border-color: #99CCFF;
-
-        
-}
+td {
+    background-color: #FFFFFF;
+    text-align: center;
+    border: 1px solid #66CCCC;
+    width: 100px;
+    height: 50px;
+        }
