@@ -2,3 +2,8 @@ body  {
     background-image : url('bg.jpg') ;   
     background-attachment: fixed;        
     }
+
+table,tr,td {
+        background-color: #FFFFFF;
+        text-align: center;
+}
