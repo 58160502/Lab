@@ -15,6 +15,7 @@ td {
     height: 50px;
 
     }
+
 th {
     background-color: #66CCCC;
     text-align: center;
@@ -28,9 +29,13 @@ th {
 }
 
 h1 {
-    color: #66CCCC;
+    color: #60A2AA;
     text-align: center;
 }
+#left {
+    text-align: left;
+}
+
 
 
 
