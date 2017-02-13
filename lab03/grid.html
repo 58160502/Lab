@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Grid</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #ADD8E6;
+      color: white;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #ADD8E6;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h4>AYE'S BLOG</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href=lab03.html>Home</a></li>
+        <li class="active"><a href=grid.html>การใช้งาน Grid ใน Bootstrap</a></li>
+        <li><a href=form.html>การใช้งาน Form</a></li>
+      </ul><br>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search Blog..">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+      </div>
+    </div>
+
+    <div class="col-sm-9">
+      <h2>การใช้งาน Grid ใน Bootstrap</h2>
+      <h5><span class="glyphicon glyphicon-time"></span> Post by Jane Dane, Sep 27, 2015.</h5>
+      <h5><span class="label label-danger">Bootstrap</span> <span class="label label-primary">Ipsum</span></h5><br>
+      <p>Bootstrap นั้นรองรับการแสดงผลทั้งบนคอมพิวเตอร์ มือถือและแท็บแล็ต โดยการแสดงผลดังกล่าว Bootstrap นั้นใช้ Grid System<br>  เข้ามาจัดการการแสดงผลเนื้อหาให้มีความเหมาะสมกับขนาดหน้าจอของอุปกรณ์ต่างๆ เหล่านั้น<br><br>
+ 
+      <h3><b>Grid System คืออะไร ?</b></h3>
+      ถ้าพูดกันแบบบ้านๆ ทั่วไปเราก็คงจะบอกว่าเป็น Layout ที่คอยควบคุมวัตถุต่างๆ บนหน้าเว็บไซต์ให้แสดงผลได้อย่างถูกต้องตามหลัก BOX layout <br>ซึ่งจะส่งผลดีต่อการเขียนหนึ่งหน้าเว็บไซต์ แต่สามารถใช้ร่วมกับอุปกรณ์ทุกขนาดหน้าจอ Grid system ของ Bootstrap เอง แบ่งออกเป็น 12 คอลัมน์<br> ถ้าให้เห็นภาพง่ายขึ้นก็น่าจะต้องบอกว่า เหมือนกับตาราง 1 แถว มี 12 คอลัมน์ประมาณนั้น <br>
+ 
+      <h3><b>การสร้าง Grid system</b></h3>
+      1. ในการสร้าง Grid system นั้น Bootstrap แนะนำให้เราสร้างแถวและคอลัมน์ไว้ใน container โดยคลาส container  ของ Bootstrap  แบ่งออกเป็น 2 ประเภท คือ <br>container และ container-fluid สำหรับ container นั้นจะแสดงผลเนื้อหาตามที่เรากำหนดความกว้างของหน้าจอ ส่วน container-fluid  <br>นั้นจะแสดงผลเนื้อหาเต็มความกว้างของหน้าจอของเรา โดยในที่นี้คือเราจะใช้คลาส container <br>
+      &lt;div class=&quot;container&quot;&gt; &nbsp; &nbsp; &nbsp;&lt;/div&gt; &nbsp;<br>
+      
+ 
+      2. สร้างแถวโดยใช้  class="row" ภายใต้ class="container" โดยเราสามารถที่จะสร้างแถวได้ไม่จำกัด แต่แถวเหล่านั้นต้องอยู่ภายใต้ class="container"<br>
+      &lt;div class=&quot;container&quot;&gt;<br>
+      &lt;div class=&quot;row&quot;&gt;&lt;/div&gt;<br>
+      &lt;/div&gt;<br>
+      3. แต่ละแถวของ Grid system นั้นมีคอลัมน์ในแต่ละแถวได้ 12 คอลัมน์ โดยคอลัมน์ของ Grid system แบ่งออกเป็น 4 ประเภทคือ<br>
+      .col-xs-  Smart PHONE  < 768 px <br>
+      .col-sm-  Tablet  ≥768px<br>
+      .col-md-  Desktop ขนาดกลาง  ≥992px<br>
+      .col-lg-  Desktop ขนาดใหญ่  ≥1200px<br><br>
+      โดยที่ "int" คือจำนวนคอลัมน์ที่เราต้องการแบ่งให้กับแต่ละเนื้อหา  ตัวอย่างเช่น เราต้องการแสดงผล 2 คอลัมน์บนขนาดหน้าจอที่ >= 768 px<br>  เราสามารถทำได้โดยการเขียนโค้ดลงไปดังนี้ <br>
+<div style="color: rgb(59, 59, 59); font-family: Arial, 'Open Sans', tahoma, sans-serif;">&lt;!DOCTYPE html&gt;</div>
+<div style="color: rgb(59, 59, 59); font-family: Arial, 'Open Sans', tahoma, sans-serif;">&lt;html lang=&quot;en&quot;&gt;</div>
+<div style="color: rgb(59, 59, 59); font-family: Arial, 'Open Sans', tahoma, sans-serif;">&nbsp;&nbsp;</div>
+<div style="color: rgb(59, 59, 59); font-family: Arial, 'Open Sans', tahoma, sans-serif;">&nbsp;&lt;head&gt;</div>
+<div style="color: rgb(59, 59, 59); font-family: Arial, 'Open Sans', tahoma, sans-serif;">&nbsp; &lt;meta charset=&quot;UTF-8&quot; /&gt;</div>
+<div style="color: rgb(59, 59, 59); font-family: Arial, 'Open Sans', tahoma, sans-serif;">&nbsp; &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;</div>
+<div style="color: rgb(59, 59, 59); font-family: Arial, 'Open Sans', tahoma, sans-serif;">&nbsp; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;</div>
+<div style="color: rgb(59, 59, 59); font-family: Arial, 'Open Sans', tahoma, sans-serif;">&nbsp; &nbsp;</div>
+<div style="color: rgb(59, 59, 59); font-family: Arial, 'Open Sans', tahoma, sans-serif;">&nbsp; &lt;title&gt;My First Boostrap Application&lt;/title&gt;</div>
+<div style="color: rgb(59, 59, 59); font-family: Arial, 'Open Sans', tahoma, sans-serif;">&nbsp; &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/bootstrap.css&quot;&gt;</div>
+<div style="color: rgb(59, 59, 59); font-family: Arial, 'Open Sans', tahoma, sans-serif;">&nbsp; &nbsp;</div>
+<div style="color: rgb(59, 59, 59); font-family: Arial, 'Open Sans', tahoma, sans-serif;">&nbsp; &nbsp;</div>
+<div style="color: rgb(59, 59, 59); font-family: Arial, 'Open Sans', tahoma, sans-serif;">&nbsp; &lt;!--[if lt IE 9] &gt;</div>
+<div style="color: rgb(59, 59, 59); font-family: Arial, 'Open Sans', tahoma, sans-serif;">&nbsp; &nbsp;&lt;script scr=&quot;https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js&quot;&gt;&lt;/script&gt;</div>
+<div style="color: rgb(59, 59, 59); font-family: Arial, 'Open Sans', tahoma, sans-serif;">&nbsp; &nbsp;&lt;script scr=&quot;https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js&quot;&gt;&lt;/script&gt;&nbsp;</div>
+<div style="color: rgb(59, 59, 59); font-family: Arial, 'Open Sans', tahoma, sans-serif;">&nbsp; &lt;![endif] --&gt;</div>
+<div style="color: rgb(59, 59, 59); font-family: Arial, 'Open Sans', tahoma, sans-serif;">&nbsp; &nbsp;</div>
+<div style="color: rgb(59, 59, 59); font-family: Arial, 'Open Sans', tahoma, sans-serif;">&nbsp; &nbsp;</div>
+<div style="color: rgb(59, 59, 59); font-family: Arial, 'Open Sans', tahoma, sans-serif;">&nbsp;&lt;/head&gt;</div>
+<div style="color: rgb(59, 59, 59); font-family: Arial, 'Open Sans', tahoma, sans-serif;">&nbsp;&nbsp;</div>
+<div style="color: rgb(59, 59, 59); font-family: Arial, 'Open Sans', tahoma, sans-serif;">&nbsp;&lt;body&gt;</div>
+<p style="margin-left: 40px;"><font face="Arial">&lt;div class=&quot;container&quot;&gt;</font></p>
+<p style="margin-left: 80px;"><font face="Arial">&lt;div class=&quot;row&quot;&gt;</font></p>
+<p style="margin-left: 120px;"><span style="font-family: Arial;">&nbsp;&lt;div class=&quot;col-sm-6&quot;&gt;</span></p>
+<p style="margin-left: 120px;"><span style="font-family: Arial;">&lt;h4&gt;Column1&lt;/h4&gt;</span></p>
+<p style="margin-left: 120px;"><span style="font-family: Arial;">&lt;/div&gt;</span></p>
+<p style="margin-left: 120px;"><span style="font-family: Arial;">&lt;div class=&quot;col-sm-6&quot;&gt;</span></p>
+<p style="margin-left: 120px;"><span style="font-family: Arial;">&lt;h4&gt;Column2&lt;/h4&gt;</span></p>
+<p style="margin-left: 120px;"><span style="font-family: Arial;">&lt;/div&gt;</span></p>
+<p style="margin-left: 80px;"><span style="font-family: Arial;">&lt;/div&gt;</span></p>
+<p style="margin-left: 40px;"><font face="Arial">&lt;/div&gt;</font></p>
+<div style="color: rgb(59, 59, 59); font-family: Arial, 'Open Sans', tahoma, sans-serif;">&nbsp; &lt;script src=&quot;js/jquery-1.11.1.js&quot;&gt;&lt;/script&gt;</div>
+<div style="color: rgb(59, 59, 59); font-family: Arial, 'Open Sans', tahoma, sans-serif;">&nbsp; &lt;script src=&quot;js/bootstrap.js&quot;&gt;&lt;/script&gt;</div>
+<div style="color: rgb(59, 59, 59); font-family: Arial, 'Open Sans', tahoma, sans-serif;">&nbsp; &nbsp;</div>
+<div style="color: rgb(59, 59, 59); font-family: Arial, 'Open Sans', tahoma, sans-serif;">&lt;/body&gt;<br />
+<span style="color: rgb(59, 59, 59); font-family: Arial, 'Open Sans', tahoma, sans-serif;">&lt;/html&gt;</span>&nbsp;</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<b>สืบค้นข้อมูลจาก :</b><a href=http://www.softmelt.com/article.php?id=544>http://www.softmelt.com/article.php?id=544</a>
+
+      </p>
+      <br><br>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid">
+  <p>กรกช ประทุมมา 58160502</p>
+</footer>
+
+</body>
+</html>

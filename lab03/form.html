@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #ADD8E6;
+      color: white;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #ADD8E6;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h4>AYE'S BLOG</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href=lab03.html>Home</a></li>
+        <li><a href=grid.html>การใช้งาน Grid ใน Bootstrap</a></li>
+        <li class="active"><a href=form.html>การใช้งาน Form</a></li>
+      </ul><br>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search Blog..">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+      </div>
+    </div>
+
+    <div class="col-sm-9">
+      <h2>การใช้งาน Form</h2>
+      <h5><span class="glyphicon glyphicon-time"></span> Post by Jane Dane, Sep 27, 2015.</h5>
+      <h5><span class="label label-danger">Bootstrap</span> <span class="label label-primary">Ipsum</span></h5><br>
+      <p> วันนี้เราจะมาพูดถึงเรื่องการใช้งาน Form ของ Bootstrap ซึ่งก็ไม่ได้มีอะไรซับซ้อนมากมาย โดยเราแค่เรียกใช้ class “form-control” ใน textbox<br> combo-box หรือ textarea แค่นี้ input ต่างๆ ก็แสดงผลในรูปแบบของ bootstrap ครับ โดย input ต่างๆ ที่มีการเรียกใช้ class “form-control” <br>จะมีลักษณะที่โค้งมน และมีความกว้าง 100% ใน tag ที่ input นี้อยู่<br>
+
+      เรามาดู From แบบแรกกันเลย<br><br>
+      <b>Inline form</b><br>
+      เป็น from ที่มีพวก input อยู่ในแถวเดียวกัน ซึ่งหน้าตาก็จะประมาณนี้<br>
+
+      <form class="form-inline">
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputEmail3">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputPassword3">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Remember me
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">Sign in</button>
+</form>
+
+    <br><br>ซึ่งเบื้องต้นก็นำ โค๊ดด้านล่างไปวางไว้ในหน้าที่มีการเรียกใช้งาน bootstrap อยู่แล้วก็สามารถใช้งานได้เลย<br>
+
+                                <textarea class="form-control" rows="30" id="comment">
+                                   <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                                            <div class="col-sm-10">
+                                            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                                            <div class="col-sm-10">
+                                            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                            <div class="checkbox">
+                                                <label>
+                                                <input type="checkbox"> Remember me
+                                                </label>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                            <button type="submit" class="btn btn-default">Sign in</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </textarea><br>
+
+<b>Horizontal form</b><br>
+ตัวนี้จะเป็นฟอร์มตามแนวนอน โดย input ต่างๆ ปกติ จะอยู่คนละแถวกัน จะมีอยู่แถวเดียวกันก็เพียง label เท่านั้น ซึ่ง Horizontal form นั้นมีการนำ grid system <br>ที่เราได้กล่าวไปแล้วใน บทความที่แล้ว เรื่อง contanier และ grid ซึ่งหน้าตาของ Horizontal form ก็จะประมาณนี้ <br><br>
+  <form class="form-horizontal">
+   <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+      <div class="col-sm-10">
+       <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+       </div>
+   </div>
+   <div class="form-group">
+       <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+       <div class="col-sm-10">
+       <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+       </div>
+   </div>
+   <div class="form-group">
+       <div class="col-sm-offset-2 col-sm-10">
+       <div class="checkbox">
+           <label>
+           <input type="checkbox"> Remember me
+           </label>
+       </div>
+       </div>
+   </div>
+   <div class="form-group">
+       <div class="col-sm-offset-2 col-sm-10">
+       <button type="submit" class="btn btn-default">Sign in</button>
+       </div>
+   </div>
+   </form><br><br>
+และโค๊ด HTML ที่ใช้ก็ คือ<br><br>
+<textarea class="form-control" rows="30" id="comment">
+                                     <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                                        <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                                        <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                        <div class="checkbox">
+                                            <label>
+                                            <input type="checkbox"> Remember me
+                                            </label>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" class="btn btn-default">Sign in</button>
+                                        </div>
+                                    </div>
+                                    </form>
+                                </textarea><br>
+
+
+                                
+      
+<b>สืบค้นข้อมูลจาก :</b><a href=http://nokhookstudio.com/bootstrap-forms/>http://nokhookstudio.com/bootstrap-forms/</a>
+
+      </p>
+      <br><br>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid">
+  <p>กรกช ประทุมมา 58160502</p>
+</footer>
+
+</body>
+</html>

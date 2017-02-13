@@ -29,13 +29,53 @@ th {
 }
 
 h1 {
+    font-size: 50px;
     color: #60A2AA;
-    text-align: center;
+    text-align: left;
 }
 #left {
     text-align: left;
 }
 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: url('1.png');
+}
 
+li {
+    float: left;
+    width: 20%
+}
 
+li a {
+    display: block;
+    color: #8dcff4;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
 
+li a:hover:not(.active) {
+    background-color: #ffffff;
+}
+
+.active {
+    background-color: #ffffff;
+}
+
+div.figure {
+background-image: url('1.png');
+float: left;
+border: thin white solid;
+margin: 0.5em;
+padding: 0.5em;
+}
+div.figure p {
+text-align: center;
+font-size: 14px;
+color: #60A2AA;
+text-indent: 0;
+}
