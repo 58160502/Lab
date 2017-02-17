@@ -1,0 +1,91 @@
+<html>
+	<head>
+		<script>
+			function loadXMLDoc(){
+				var xmlhttp;
+				var xmlhttp_2;
+				var xmlhttp_3;
+				if(window.XMLHttpRequest){
+					xmlhttp=new XMLHttpRequest();
+					xmlhttp_2=new XMLHttpRequest();
+					xmlhttp_3=new XMLHttpRequest();
+				}else {
+					xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+					xmlhttp_2=new ActiveXObject("Microsoft.XMLHTTP");
+					xmlhttp_3=new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				xmlhttp.onreadystatechange=function(){
+				//alert(xmlhttp.readyState+" : "+xmlhttp.status);
+					if(xmlhttp.readyState==4 && xmlhttp.status==200){
+						document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+					}
+				}
+			xmlhttp.open("GET","kamkom.php",true);
+			xmlhttp.send();
+
+				xmlhttp_2.onreadystatechange=function(){
+				//alert(xmlhttp_2.readyState+" : "+xmlhttp_2.status);
+					if(xmlhttp_2.readyState==4 && xmlhttp_2.status==200){
+						document.getElementById("myDiv2").innerHTML = xmlhttp_2.responseText;
+					}
+				}
+			xmlhttp_2.open("GET","kamkom.php",true);
+			xmlhttp_2.send();
+
+			xmlhttp_3.onreadystatechange=function(){
+				//alert(xmlhttp_3.readyState+" : "+xmlhttp_3.status);
+					if(xmlhttp_3.readyState==4 && xmlhttp_3.status==200){
+						document.getElementById("myDiv3").innerHTML = xmlhttp_3.responseText;
+					}
+				}
+			xmlhttp_3.open("GET","kamkom.php",true);
+			xmlhttp_3.send();
+			}
+		</script>
+	</head>
+	<body>
+		<div id="myDiv">
+			<h2>
+				Let AJAX change this text
+			</h2>
+		</div>
+		<div id="myDiv2">
+			<h2></h2>
+		</div>
+		<div id="myDiv3">
+			<h2></h2>
+		</div>
+		<button type="button" onclick="loadXMLDoc()">
+			Change Content
+		</button>
+
+<!-- <br><br>
+<center><table width=80%>	
+	<tr>
+		<td></td>
+		<td><center>คำอธิบาย</center></td>
+	</tr>
+	<tr>
+		<td><center><img src="1.png"></center></td>
+		<td>
+		<font size= 2><b>เมื่อกดปุ่ม Change Content จะทำการเรียกฟังก์ชั่นที่ชื่อว่า loadXMLDoc() มาใช้ตามบรรทัดที่ 4-19 จะอธิบายดังนี้</b></font><br>
+		<font size= 2>บรรทัดที่ 4 สร้างฟังก์ชั่น loadMXLDoc()</font><br>
+		<font size= 2>บรรทัดที่ 5 ตั้งตัวแปรมาชื่อว่า xmlhttp</font><br>
+		<font size= 2>บรรทัดที่ 6 ตั้งเงื่อนไขสอบถามว่าสนับสนุนการทำงานแบบ XMLHttpRequest Object หรือไม่</font><br>
+		<font size= 2>บรรทัดที่ 7 ถ้าเข้าเงื่อนไขก็เรียก XMLHttpRequest Object มาใช้</font><br>
+		<font size= 2>บรรทัดที่ 8 ถ้าเป็นอย่างอื่นหรือไม่เข้าเงื่อนไข</font><br>
+		<font size= 2>บรรทัดที่ 9 ให้เรียก  ActiveXObject("Microsoft.XMLHTTP") มาใช้แทน</font><br>
+		<font size= 2>บรรทัดที่ 11 กำหนดให้ xmlhttp.onreadystatechange เป็น function ทำหน้าที่ตรวจสอบสถานะการทำงานของการ request</font><br>
+		<font size= 2>บรรทัดที่ 12 ให้ทำการแจ้งหน้าต่างขึ้นเตือน state และ status </font><br>
+		<font size= 2>บรรทัดที่ 13 กำหนดเงื่อนไขว่าถ้า state เท่ากับ 4 และ status เท่ากับ 200 </font><br>
+		<font size= 2>บรรทัดที่ 14 ให้ทำการเข้าถึงข้อมูลที่มี ID ชื่อว่า myDiv โดยให้นำข้อมูลมาจาก sever คืนค่าเป็นแบบข้อความ</font><br>
+		<font size= 2>บรรทัดที่ 17 เปิดไฟล์ที่ต้องการให้คืนค่าโดยใช้รูปแบบการขอเป็นแบบ GET คือมีการพ่วงท้าย URL ไปด้วย</font><br>
+		<font size= 2>บรรทัดที่ 18 ส่งไฟล์ข้างต้นไปคืนค่า</font><br>
+		</td>
+	</tr>
+</table></center> -->
+
+
+	</body>
+
+</html>
